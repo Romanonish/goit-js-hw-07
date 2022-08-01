@@ -5,7 +5,7 @@ let instance;
 
 galleryEl.insertAdjacentHTML('beforeend', createGallery(galleryItems));
 
-window.addEventListener('click', galleryItemOnClick);
+galleryEl.addEventListener('click', galleryItemOnClick);
  
 function galleryItemOnClick(e) {
     e.preventDefault();
@@ -22,7 +22,7 @@ function galleryItemOnClick(e) {
 function closeModalByEsc(e) {
     if (e.code === 'Escape') {        
         instance.close();
-        document.removeEventListener('keydown', closeModalByEsc);
+        window.removeEventListener('keydown', closeModalByEsc);
 };
 };
 
